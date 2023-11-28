@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom,#62B0DD, #ffffff); /* Set body background gradient */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .main-container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            width: 800px;
+            height: 240px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box {
+            background-color: #76BCE4;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Cooper black';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-box img {
+            max-width: 8%; /* Ensure the image doesn't exceed the container width */
+            border-radius: 0px; /* Optional: Add rounded corners to the image */
+        }
+
+        .info-content {
+            max-width: 70%; /* Adjust the content width as needed */
+            text-align: left;
+        }
+
+        .input-box {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content:center;
+        }
+
+        .button1 {
+            width: 48%; /* Adjust as needed */
+            height: 60px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #76BCE4;
+            color: #000000;
+            cursor: pointer;
+            font-family: Franklin Gothic Heavy;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="info-box">
+        <img src="logo.png">
+        <div class="info-content">
+            <p>LunchGuardians</p>
+        </div>
+    </div>
+    <input type="text" class="input-box" placeholder="Въведи парола">
+    <input type="text" class="input-box" placeholder="Повтори въведената парола">
+    <div class="button-container">
+        <button class="button1"><a href="">Влез</a></button>
+    </div>
+</div>
+
+</body>
+</html>

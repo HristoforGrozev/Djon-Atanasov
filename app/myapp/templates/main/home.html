@@ -1,0 +1,145 @@
+{% extends "main/base.html" %} 
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunchGuardians - За нас</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to bottom,#62B0DD, #ffffff); /* Set body background gradient */
+            font-family: 'Cooper black';
+        }
+        
+        header {
+            background-color: #76BCE4;
+            color: #000000;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header div {
+            display: flex;
+            align-items: center;
+        }
+        
+        header div h1 {
+            margin: 0; /* Remove default margin for h1 */
+            font-family: 'Cooper black';
+        }
+        
+        header img {
+            height: 80px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 25px; /* Adjust the padding to make the button bigger */
+            font-size: 30px; /* Adjust the font size to make the button text bigger */
+            border-radius: 15px;
+            width: 275px;
+            height: 150px;
+            font-family: Franklin Gothic Heavy;
+            background-color: #EDF6FA;
+            border-color: #0B6599;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+        
+        .info-box1 {
+            width: 80%;
+            padding: 0px;
+            margin: 0px auto;
+            display: block;
+            border: 0px transparent #ccc;
+            text-align: left;
+            font-weight: bold;
+            font-family: 'Cooper black';
+            font-size: 25px;
+        }
+        .info-box2 {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border: 1px transparent #ccc;
+            text-align:justify;
+            font-size: large;
+        }
+        
+        .contact-box {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border: 1px transparent #ccc;
+            text-align:center;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }        
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="{% static 'img/logo.png' %}" alt="My image">
+            <h1>LunchGuardians</h1>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+            <span class="navbar-text">Logged in as {{user.username}} | </span>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="info-box1">
+        <p>Кои сме ние? </p>
+    </div>
+
+    <div class="info-box2">
+        <p>Платформата LunchGuardians е направена с цел да улесни родители и учители от събирането на пари за обедните ястия на децата в училище. С помощта на LunchGuardians, родителят може с дебитна или кредитна карта да заплати обяда за следващата учебна седмица на неговото дете.</p>
+    </div>
+
+    <div class="contact-box">
+        <p>Контакти:</p>
+        <p>Телефон: +302726391</p>
+        <p>Имейл: your.email@example.com</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    <footer>
+        <!-- Footer content goes here -->
+        &copy; 2023 LunchGuardians
+    </footer>
+</body>
+{% endblock %}

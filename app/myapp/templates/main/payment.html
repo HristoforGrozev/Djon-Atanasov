@@ -1,0 +1,158 @@
+{% extends 'main/base.html' %}
+{% block title %}Payment{% endblock %}
+{% load crispy_forms_tags %}
+{% load static%}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunchGuardians</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom,#72B6DD, #ffffff); /* Set body background gradient */
+            font-family: 'Cooper black';
+            color: #000000;
+        }
+
+        header {
+            background-color:transparent;
+            color: #000000;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        header button {
+            border: none;
+            cursor: pointer;
+            margin: 0px;        
+            width: 80px;
+            background-color: transparent;
+            border-color: transparent;
+            border-radius: 15px;
+            border: 0%;
+            padding: 0%;
+            font-size: 250%;   
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+        }  
+
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            align-content: center;
+            justify-content: center;
+            align-items: baseline;
+        }
+
+
+        .payment-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px; /* Set a maximum width for better readability */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+
+        .card-info-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button#pay {
+            background-color: #76BCE4;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            display: block;
+            padding: 10%;
+            margin-left: 35%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+<body>
+
+    <header>
+        <button><a href='/order'>←</a></button>
+        <h1>Плащане</h1>
+    </header>
+
+    <main>
+        <div class="payment-container">
+            <div class="info-box">
+                <h2>Обща сума:</h2>
+            </div>
+            <div class="info-box">
+                <h2>Пари</h2>
+            </div>
+        </div>
+    
+        <div class="card-info-container">
+            <h2>Въведете информация за вашата карта</h2>
+            <form>
+                <label for="cardNumber">Номер на карта:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+    
+                <label for="expiryDate">Дата на изтичане:</label>
+                <input type="date" id="expiryDate" name="expiryDate" required>
+    
+                <label for="cvv">CVV:</label>
+                <input type="number" id="cvv" name="cvv" required>
+    
+                <button id="pay"><a>Поръчай</a></button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+        &copy; 2023 LunchGuardians
+    </footer>
+</body>
+
+{% endblock %}

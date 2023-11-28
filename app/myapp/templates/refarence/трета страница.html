@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom,#62B0DD, #ffffff); /* Set body background gradient */
+            font-family: 'Cooper black';
+        }
+
+        .main-container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            width: 800px;
+            height: 240px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box {
+            background-color: #76BCE4;
+            color: #000000;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Cooper black';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-box img {
+            max-width: 8%; /* Ensure the image doesn't exceed the container width */
+            border-radius: 0px; /* Optional: Add rounded corners to the image */
+        }
+
+        .info-content {
+            max-width: 70%; /* Adjust the content width as needed */
+            text-align: left;
+        }
+
+        .input-box {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button1 {
+            width: 48%; /* Adjust as needed */
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color:#A3CEE6;
+            color: #000000;
+            cursor: pointer;
+            font-family: Franklin Gothic Heavy;
+        }
+
+        .button2 {
+            width: 48%; /* Adjust as needed */
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #76BCE4;
+            color: #000000;
+            cursor: pointer;
+            font-family: Franklin Gothic Heavy;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="info-box">
+        <img src="logo.png">
+        <div class="info-content">
+            <p>LunchGuardians</p>
+        </div>
+    </div>
+    <input type="text" class="input-box" placeholder="Въведи имейл">
+    <input type="text" class="input-box" placeholder="Въведи парола">
+    <div class="button-container">
+        <button class="button1"><a href='file:///C:/Users/LCUser/Desktop/LunchGuardians/%D0%B2%D1%82%D0%BE%D1%80%D0%B0%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0.html'>Нямаш профил? Направи си.</a></button>
+        <button class="button2"><a href='file:///C:/Users/LCUser/Desktop/LunchGuardians/%D0%BF%D0%B5%D1%82%D0%B0%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0.html'>Влез</a></button>
+    </div>
+</div>
+
+<footer>
+    <!-- Footer content goes here -->
+    &copy; 2023 LunchGuardians
+</footer>
+
+</body>
+</html>

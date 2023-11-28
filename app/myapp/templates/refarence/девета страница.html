@@ -1,0 +1,208 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunchGuardians</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom,#72B6DD, #ffffff); /* Set body background gradient */
+            font-family: 'Cooper black';
+            color: #000000;
+        }
+    
+        header {
+            background-color:transparent;
+            color: #000000;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+    
+        header button {
+            border: none;
+            cursor: pointer;
+            margin: 0px;        
+            width: 80px;
+            background-color: transparent;
+            border-color: transparent;
+            border-radius: 15px;
+            border: 0%;
+            padding: 0%;
+            font-size: 250%;   
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+        }  
+    
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+    
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            align-content: center;
+            justify-content: center;
+            align-items: baseline;
+        }
+    
+        .selectable-rectangle {
+            width: 80%;
+            height: 30%;
+            padding: 5%;
+            margin: 5%;
+            background-color: #F5F8FA;
+            border: 0px solid #ccc;
+            border-radius: 20px;
+            transition: background-color 0.3s; /* Add transition for a smoother color change */
+            display: flex;
+            justify-content: space-between; /* Align items horizontally */
+            align-items: center; /* Center items vertically */
+        }
+
+        .info-box {
+            margin: 0px;
+            border: 0px solid #ccc;
+            margin-left: -5%;
+            padding-right: 5%;
+            flex-grow: 1; /* Allow the info boxes to take equal height in the container */
+            font-weight: bold;
+            font-size: 100%;
+           text-align: left ;
+        }
+    
+        .info-box1 {
+            margin-left: 15%;
+            border: 0px solid #ccc;
+            padding: 0%;
+            flex-grow: 1; /* Allow the info boxes to take equal height in the container */
+            font-weight: bold;
+            font-size: 100%;
+            text-align: left ;
+        }
+
+        .info-box2 {
+            margin: 0px;
+            border: 0px solid #ccc;
+            margin-left: -5%;
+            padding-right: 5%;
+            flex-grow: 1; /* Allow the info boxes to take equal height in the container */
+            font-weight: normal;
+            font-size: 100%;
+           text-align: left ;
+        }
+    
+
+        .select-button {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 150%;
+            margin-left: 20%; /* Add space between the info boxes and the button */
+        }
+
+        .selected {
+            background-color: #e49576;
+            color: #000000;
+        }
+              
+        .button1 {
+            display:flex;
+            margin: 10%;
+            padding: 5%; /* Adjust the padding to make the button bigger */
+            font-size: 150%; /* Adjust the font size to make the button text bigger */
+            border-radius: 15px;
+            width: 80%;
+            height: 150px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #76BCE4;
+            border-color: #0B6599;
+            justify-content: center;
+        }
+
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 100%;
+        }
+    
+        </style>
+    </head>
+    <body>
+    
+    <header>
+        <button><a href='file:///C:/Users/LCUser/Desktop/LunchGuardians/%D1%88%D0%B5%D1%81%D1%82%D0%B0%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0-%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB.html'>←</a></button>
+        <h1>Поръчани обяди за настояща седмица</h1>
+    </header>
+    
+    <main>
+    <div class="selectable-rectangle">
+        <div class="info-box">
+            <h2>Понеделник</h2>
+        </div>
+        <div class="info-box">
+            <h2>Цена</h2>
+        </div>
+        <button class="select-button" onclick="toggleSelection(this)">X</button>
+    </div>
+    <div class="selectable-rectangle">
+        <div class="info-box">
+            <h2>Вторник</h2>
+        </div>
+        <div class="info-box">
+            <h2>Цена</h2>
+        </div>
+        <button class="select-button" onclick="toggleSelection(this)">X</button>
+    </div>
+    <div class="selectable-rectangle">
+        <div class="info-box">
+            <h2>Четвъртък</h2>
+        </div>
+        <div class="info-box">
+            <h2>Цена</h2>
+        </div>
+        <button class="select-button" onclick="toggleSelection(this)">X</button>
+    </div>
+    <div class="selectable-rectangle">
+        <div class="info-box">
+            <h2>Петък</h2>
+        </div>
+        <div class="info-box">
+            <h2>Цена</h2>
+        </div>
+        <button class="select-button" onclick="toggleSelection(this)">X</button>
+    </div>
+
+    <div class="info-box2">
+        <p>Поръчка за обяд се отменя до 22:00 предния ден!</p>
+        <p>При отменяне на поръчка , парите се връщат към вас и се намират в Баланс , като могат да се използавт при бъдещи поръчки!</p>
+    </div>
+    </main>
+
+    <script>
+        function toggleSelection(button) {
+            const rectangle = button.parentElement;
+            rectangle.classList.toggle('selected');
+        }
+    </script>
+    <footer>
+        &copy; 2023 LunchGuardians | 
+    </footer>
+    
+    
+    </body>
+    </html>

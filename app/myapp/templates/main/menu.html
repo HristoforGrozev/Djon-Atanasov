@@ -1,0 +1,207 @@
+{% extends 'main/base.html' %}
+{% block title %}Menu{% endblock %}
+{% load crispy_forms_tags %}
+{% load static%}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom,#72B6DD, #ffffff); /* Set body background gradient */
+        font-family: 'Cooper black';
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 0px solid #ccc;
+        font-weight: bold;
+        background-color: #76BCE4;
+        text-align: left;
+        font-size: 60%;
+    }
+
+    header img {
+        width: 10%;
+        height: auto;
+    }
+
+    header h1 {
+        margin: 0; /* Remove default margin for h1 */
+        font-family: 'Cooper black';
+    }
+
+    header button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-left: 10px;
+        justify-content:right;
+        font-size: 18px;
+        text-align: right;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    main {
+        padding-top: 10px;
+        padding-right: 8%;
+        padding-left: 6%;
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content:center; /* Distribute items with equal space around them */
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin: auto;
+    }
+
+    .top-info-box {
+        width: 95% ;
+        background-color: #f0f0f0;
+        padding: 20px;
+      /*  margin-left: -200%;*/
+        margin-bottom: 20px;
+        border: 0px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 15px;
+        font-size: 20px;
+    }
+
+    .top-info-box button{
+        border-color: transparent;
+        border-radius: 10px;
+        font-size: 25px;
+    }
+    
+    .top-info-box p {
+        text-align: right; /* Move the text to the right */
+    }
+
+    .rectangle {
+        width: 100%;
+        margin: 15px;
+        box-sizing: border-box;
+        background-color: #F5F8FA;
+        padding: 20px;
+        border: 0px solid #ccc;
+        border-radius: 10px;
+    }
+    
+    .info-box1 {
+        margin: 0px;
+        border: 0px solid #ccc;
+        padding: 10px;
+        flex-grow: 1; /* Allow the info boxes to take equal height in the container */
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .info-box {
+        margin: 0px;
+        border: 0px solid #ccc;
+        padding: 10px;
+        flex-grow: 1; /* Allow the info boxes to take equal height in the container */
+    }
+
+    .info-box2 {
+        margin: 0px;
+        border: 0px solid #ccc;
+        padding: 10px;
+        flex-grow: 1; /* Allow the info boxes to take equal height in the container */
+        text-align: center;
+    }
+
+    .info-box button#add {
+        background-color:#76BCE4;
+        color: #000000;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%; /* Full width button */
+        border-radius: 10px;
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+
+    .info-box button#del {
+        background-color:#eb3535;
+        color: #000000;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%; /* Full width button */
+        border-radius: 10px;
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    div.logo-and-name{
+        display: flex;
+        align-items: center;
+    }
+
+    div.order-and-profile{
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit; 
+    }
+</style>
+<main>
+    <header>
+        <div class="logo-and-name"> 
+            <img src="{% static 'img/logo.png' %}" alt="My image">
+            <h1>LunchGuardians</h1>
+        </div>
+       
+        <div class="order-and-profile">
+            <button><a href="/order">Поръчка</a></button>
+            <button><a href="/profile">Профил</a></button>
+        </div>
+    </header>
+    {% for menu in menus %}
+    <div class="rectangle">
+        <div class="info-box1">{{menu.date}}</div>
+        <div class="info-box">
+            <p>Меню:</p>
+            <p>{{menu.food}}</p>
+        </div>
+        <div class="info-box">
+            
+            {% if user == menu.author %}
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" name="menu-id" value={{menu.id}} id="del">Изтрий</button>
+                </form>
+            {% else %}
+                <button id="add">Добави</button>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <p>Все още няма качени менюта.</p>
+    {% endfor %}
+</main>
+{% endblock %}
